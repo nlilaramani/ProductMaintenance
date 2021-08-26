@@ -8,6 +8,7 @@ package com.ps.pm;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -44,4 +45,8 @@ public class ProductController {
         return pc;
     }
     
+     @RequestMapping(value="/products/{id}", method=RequestMethod.DELETE)
+    public void deleteProduct(@PathVariable(name="id") Integer id){
+        productRepo.deleteById(id);
+    }
 }

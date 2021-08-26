@@ -52,4 +52,7 @@ public class ProductContract {
         this.description=desc;
         this.price=price;
     }
+    public ProductContract(){
+        
+    }
 }
